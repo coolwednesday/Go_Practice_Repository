@@ -2,6 +2,7 @@ package main
 
 import "testing"
 
+//Test_perimeterCircle define the functional tests for PerimeterCircle function
 func Test_perimeterRectangle(t *testing.T) {
 	type dimensions struct {
 		width, height float64
@@ -25,6 +26,7 @@ func Test_perimeterRectangle(t *testing.T) {
 	}
 }
 
+//Test_perimeterCircle define the functional tests for PerimeterCircle function
 func Test_perimeterCircle(t *testing.T) {
 	tests := []struct {
 		name   string
@@ -43,14 +45,14 @@ func Test_perimeterCircle(t *testing.T) {
 	}
 }
 
-// Benchmark Testing for sum Function
+// Benchmark Testing for PerimeterCircle Function
 func BenchmarkPerimeterCircle(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		PerimeterCircle(5)
 	}
 }
 
-// Benchmark Testing for sum Function
+// Benchmark Testing for PerimeterRectangle Function
 func BenchmarkPerimeterRectangle(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		PerimeterRectangle(5, 6)
