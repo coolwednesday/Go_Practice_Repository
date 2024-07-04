@@ -16,6 +16,7 @@ Bob only ever answers one of five things:
 */
 // Hey should have a comment documenting it.
 func Hey(s string) string {
+	//Handle multiple whitespaces
 	s = strings.TrimSpace(s)
 	if s == "" {
 		return "Fine. Be that way!"
