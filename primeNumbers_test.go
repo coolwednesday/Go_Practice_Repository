@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 // Test_primeNumbers defines the functional testing of various usecases of PrimeNumbers function in primeNumbers.go file
 func Test_primeNumbers(t *testing.T) {
@@ -10,8 +12,9 @@ func Test_primeNumbers(t *testing.T) {
 		output int
 	}{
 		{name: "3 as input", input: 3, output: 2},
-		{name: "0 as input", input: 0, output: 0},
-		{name: "1 as input", input: 1, output: 0},
+		{name: "negative number as input", input: -4, output: -1},
+		{name: "0 as input", input: 0, output: -1},
+		{name: "1 as input", input: 1, output: -1},
 		{name: "4 as input", input: 4, output: 2},
 	}
 	for _, test := range tests {
