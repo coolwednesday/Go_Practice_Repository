@@ -20,7 +20,7 @@ func Test_primeNumbers(t *testing.T) {
 	for i, test := range tests {
 		res := PrimeNumbers(test.input)
 		if res != test.output {
-			t.Errorf("Test [%d] failed , desc: %v, got: %d, want:%d", i+1, test.name, test.output, res)
+			t.Errorf("Test [%d] failed , desc: %v, got: %d, want:%d", i+1, test.name, res, test.output)
 		}
 	}
 }

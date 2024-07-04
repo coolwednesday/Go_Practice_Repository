@@ -20,7 +20,7 @@ func Test_RemainingOvenTime(t *testing.T) {
 	}
 }
 
-// Functional test for PrepareationTime
+// Functional test for PreparationTime
 func Test_PreparationTime(t *testing.T) {
 	tests := []struct {
 		name   string
@@ -57,8 +57,29 @@ func Test_ElapsedTime(t *testing.T) {
 	for i, test := range tests {
 		res := ElapsedTime(test.input.numberOfLayers, test.input.actualMinutesInOven)
 		if res != test.output {
-			t.Errorf("Test [%d] failed , desc: %v, got: %d, want:%d", i+1, test.name, test.output, res)
+			t.Errorf("Test [%d] failed , desc: %v, got: %d, want:%d", i+1, test.name, res, test.output)
 		}
 	}
 
+}
+
+// Benchmark Testing for ElapsedTime Function
+func BenchmarkElapsedTime(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		ElapsedTime(2, 5)
+	}
+}
+
+// Benchmark Testing for  Function
+func BenchmarkPreparationTime(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		PreparationTime(2)
+	}
+}
+
+// Benchmark Testing for sum Function
+func BenchmarkRemainingOvenTime(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		RemainingOvenTime(6)
+	}
 }

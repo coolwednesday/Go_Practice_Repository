@@ -40,7 +40,7 @@ func Test_perimeterCircle(t *testing.T) {
 	for i, test := range tests {
 		res := PerimeterCircle(test.input)
 		if res != test.output {
-			t.Errorf("Test [%d] failed , desc: %v, got: %f, want:%f", i+1, test.name, test.output, res)
+			t.Errorf("Test [%d] failed , desc: %v, got: %f, want:%f", i+1, test.name, res, test.output)
 		}
 	}
 }
