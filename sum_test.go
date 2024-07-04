@@ -13,10 +13,10 @@ func Test_Sum(t *testing.T) {
 		{name: "-1 as input", input: -1, output: 0},
 		{name: "4 as input", input: 4, output: 10},
 	}
-	for _, test := range tests {
+	for i, test := range tests {
 		res := Sum(test.input)
 		if res != test.output {
-			t.Errorf("Test %s failed", test.name)
+			t.Errorf("Test [%d] failed , desc: %v, got: %d, want:%d", i+1, test.name, test.output, res)
 		}
 	}
 }

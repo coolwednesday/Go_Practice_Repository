@@ -18,10 +18,10 @@ func Test_perimeterRectangle(t *testing.T) {
 		{name: "Length and breadth are 0", input: dimensions{0, 0}, output: 0},
 		{name: "Length and breadth are positive", input: dimensions{3, 2}, output: 10},
 	}
-	for _, test := range tests {
+	for i, test := range tests {
 		res := PerimeterRectangle(test.input.width, test.input.height)
 		if res != test.output {
-			t.Errorf("Test %s failed", test.name)
+			t.Errorf("Test [%d] failed , desc: %v, got: %f, want:%f", i+1, test.name, test.output, res)
 		}
 	}
 }
@@ -37,10 +37,10 @@ func Test_perimeterCircle(t *testing.T) {
 		{name: "Radius is 0", input: 0, output: 0},
 		{name: "Radius is positive", input: 4, output: 25.12},
 	}
-	for _, test := range tests {
+	for i, test := range tests {
 		res := PerimeterCircle(test.input)
 		if res != test.output {
-			t.Errorf("Test %s failed", test.name)
+			t.Errorf("Test [%d] failed , desc: %v, got: %f, want:%f", i+1, test.name, test.output, res)
 		}
 	}
 }
