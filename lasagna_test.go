@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-// Functional test for remaining oven time (Cannot take a negative number as describes the time specnt in oven)
+// Functional test for remaining oven time (Cannot take a negative number as describes the time spent in oven)
 func Test_RemainingOvenTime(t *testing.T) {
 	tests := []struct {
 		name   string
