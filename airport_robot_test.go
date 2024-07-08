@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-// Test_Sum defines the functional testing of Sum function in sum.go file
+// Test_SayHello defines the functional testing of SayHello function in airport_robot_test.go file
 func Test_SayHello(t *testing.T) {
 	type parameter struct {
 		name string
@@ -27,7 +27,7 @@ func Test_SayHello(t *testing.T) {
 	}
 }
 
-// Benchmark Testing for sum Function
+// Benchmark Testing for SayHello Function
 func BenchmarkSayHello(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SayHello("Divya", Italian{})
