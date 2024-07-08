@@ -32,6 +32,13 @@ func NewOrder(id int, amount int, shippingFee float64) *Order {
 		shippingFee: shippingFee,
 	}
 }
+func NewEmployee(id int, name string, email string) *Employee {
+	return &Employee{
+		id:    id,
+		name:  name,
+		email: email,
+	}
+}
 
 func (order *Order) recalculateOrder() {
 	if order.amount < 255 {
@@ -39,11 +46,6 @@ func (order *Order) recalculateOrder() {
 	}
 }
 
-func NewEmployee(id int, name string, email string) *Employee {
-	return &Employee{
-		id: id, name: name, email: email,
-	}
-}
 func (e *Employee) GetID() int {
 	return e.id
 }
@@ -75,10 +77,27 @@ func main() {
 			fmt.Println("Circumference of Circle is:", PerimeterCircle(4))
 			fmt.Println("Bob Replied : ", Hey("WHAT IS THE STATUS ?"))
 			fmt.Println("Number of Prime Numbers: ", PrimeNumbers(0))
-
 	*/
+
+	//Existing Employees
+	E := []Employee{
+		{id: 1000, name: "Divi", email: "hello@gmail.com"},
+		{id: 1000, name: "D", email: "hehe@gmail.com"},
+		{id: 1000, name: "XoXo", email: "hell@gmail.com"},
+		{id: 1000, name: "John", email: "hey@gmail.com"},
+	}
+	//Creating new Employee
 	e := NewEmployee(100234, "Darshana", "darshana@gmail.com")
-	fmt.Println("Employee Details")
+	//Adding Employee to the list
+	E = append(E, *e)
+
+	//New List of Employess
+	fmt.Println(E)
+	for _, v := range E {
+		fmt.Println(v)
+	}
+
+	fmt.Println("Current Added Employee Details")
 	fmt.Println("id: ", e.GetID())
 	fmt.Println("name: ", e.GetName())
 	fmt.Println("email: ", e.GetEmail())
