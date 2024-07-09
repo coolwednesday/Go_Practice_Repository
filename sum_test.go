@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 // Test_Sum defines the functional testing of Sum function in sum.go file
 func Test_Sum(t *testing.T) {
@@ -14,10 +17,7 @@ func Test_Sum(t *testing.T) {
 		{name: "4 as input", input: 4, output: 10},
 	}
 	for _, test := range tests {
-		res := Sum(test.input)
-		if res != test.output {
-			t.Errorf("Test %s failed", test.name)
-		}
+		assert.Equal(t, test.output, Sum(test.input))
 	}
 }
 

@@ -15,6 +15,9 @@ func isprime(num int) bool {
 
 // PrimeNumbers function take an integer and return the count of prime numbers
 func PrimeNumbers(n int) int {
+	if n <= 1 {
+		return -1
+	}
 	count := 0
 	for i := 0; i <= n; i++ {
 		if isprime(i) == true {
