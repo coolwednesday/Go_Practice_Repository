@@ -28,9 +28,8 @@ func CrawlHelper(url string, depth int, fetcher Fetcher) {
 // pages starting with url, to a maximum of depth.
 
 func Crawl(url string, depth int, fetcher Fetcher, fetched map[string]bool) {
-	// TODO: Fetch URLs in parallel.
-	// TODO: Don't fetch the same URL twice.
-	// This implementation doesn't do either:
+	// We have to Fetch URLs in parallel.
+	// Here we do not have to fetch the same URL twice.
 	if depth <= 0 {
 		return
 	}
