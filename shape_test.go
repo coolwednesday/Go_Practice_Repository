@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func test_GetDetails(t *testing.T) {
+func Test_GetDetails(t *testing.T) {
 	tests := []struct {
 		name   string
 		input  shape
@@ -18,5 +18,12 @@ func test_GetDetails(t *testing.T) {
 	}
 	for _, test := range tests {
 		assert.Equal(t, test.output, getDetails(test.input))
+	}
+}
+
+// Benchmark Testing for SayHello Function
+func BenchmarkgetDetails(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		getDetails(rectangle{length: 10, breadth: 8})
 	}
 }
