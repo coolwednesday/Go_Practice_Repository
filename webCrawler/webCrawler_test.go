@@ -6,12 +6,8 @@ import (
 	"testing"
 )
 
-func compareUrls(i, j int) bool {
-	return s[i].url < s[j].url
-}
-
 func TestWebCrawler(t *testing.T) {
-
+	//Valid Sorted Output
 	validOutput1 := []res{
 		{url: "https://golang.org/", body: "The Go Programming Language", found: true},
 		{url: "https://golang.org/cmd/", body: "", found: false},
@@ -19,7 +15,7 @@ func TestWebCrawler(t *testing.T) {
 		{url: "https://golang.org/pkg/fmt/", body: "Package fmt", found: true},
 		{url: "https://golang.org/pkg/os/", body: "Package os", found: true},
 	}
-
+	//tests
 	tests := []struct {
 		name   string
 		input  string
@@ -33,9 +29,10 @@ func TestWebCrawler(t *testing.T) {
 
 	for _, test := range tests {
 		o := fetchUrls(test.input)
-		//sorting the slice
-		sort.Slice(s, compareUrls)
+		//sorting the slice as goroutines results in unordered results everytime
+		sort.Slice(o, func(i, j int) bool {
+			return o[i].url < o[j].url
+		})
 		assert.Equal(t, test.output, o)
-		s = nil
 	}
 }

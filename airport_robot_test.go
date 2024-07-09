@@ -27,7 +27,7 @@ func Test_SayHello(t *testing.T) {
 	}
 }
 
-// Benchmark Testing for SayHello Function
+// BenchmarkSayHello Benchmark Testing for SayHello Function
 func BenchmarkSayHello(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SayHello("Divya", Italian{})

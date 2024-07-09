@@ -2,7 +2,7 @@ package BinaryTree
 
 import "golang.org/x/tour/tree"
 
-// Walk walks the tree t sending all values
+// walk function walks the tree t sending all values
 // from the tree to the channel ch.
 // inorder traversal and sending the node value in the channel
 func walk(t *tree.Tree, ch chan int) {
