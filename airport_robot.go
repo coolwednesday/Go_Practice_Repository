@@ -8,15 +8,15 @@ type greeter interface {
 	greet(string) string
 }
 
-// empty Struct for Italian
+// Italian empty Struct
 type Italian struct {
 }
 
-// empty Struct for Portuguese
+// Portuguese empty Struct
 type Portuguese struct {
 }
 
-// Greet method for Italian
+// greet method for Italian
 func (i Italian) greet(name string) string {
 	return fmt.Sprintf("Ciao %v!", name)
 }
@@ -27,12 +27,12 @@ func (i Portuguese) greet(name string) string {
 	return fmt.Sprintf("Olá %v!", name)
 }
 
-// LanguageName method for Italian struct
+// languageName method for Italian struct
 func (i Italian) languageName() string {
 	return "Italian"
 }
 
-// LanguageName method for Portuguese struct
+// languageName method for Portuguese struct
 func (i Portuguese) languageName() string {
 	return "Portuguese"
 }

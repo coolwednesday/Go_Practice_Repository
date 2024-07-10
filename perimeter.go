@@ -4,7 +4,6 @@ const pi = 3.14
 
 // PerimeterCircle takes the radius x and returns circumference
 func PerimeterCircle(x float64) float64 {
-
 	if x < 0 {
 		return -1
 	}
